@@ -1,0 +1,76 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;   
+  }
+  
+  .nav--footer {
+    display: none;
+  }
+  
+  /* Iconos en la barra de navegación */
+  
+  
+  .nav__icons {
+    font-size: 1.5rem;
+    color:var(--color-tertiary);
+    margin-right: 20px;
+  }
+
+  /* Enlaces en la berra de navegación */
+
+  .nav__items {
+    text-decoration: none;
+    color: var(--color-tertiary);
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 10px 15px;
+  }
+  
+  .nav__items--active {
+    color: var(--color-secondary);
+  }
+  
+/* Resposive Web */
+
+@media screen and (max-width: 1000px) {
+    /* NavBar */
+    .nav__items {
+        margin-right: 10px;
+        padding: 10px 5px;
+    }
+    .nav__icons {
+        margin-right: 10px;
+    }
+
+  }
+  
+  @media screen and (max-width: 600px) {
+    
+    /* NavBar */
+    
+    .nav {
+        display: none;
+        justify-content: space-around; 
+    }
+  
+    
+  
+    /* NavFooterBar */
+  
+    .nav--footer {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        display: flex;
+        justify-content: space-around;
+        height: 60px;
+        width: 100vw;
+        align-items: center;
+        position: fixed;
+        bottom: 0px;
+        background: var(--color-white);
+        /* border: solid 1px red; */
+  
+    }
+  
+  }  
