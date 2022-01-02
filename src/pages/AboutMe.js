@@ -47,7 +47,7 @@ const AboutMe = () => {
 
     const classes = useStyles()
     return (
-          <Grid container  className={ classes.container } id="about">
+          <Grid container  className={ classes.container } id="about" spacing={ 4 }>
             <Grid item lg={ 8 } sm={ 8 } xs={ 12 } >
                 <Typography variant="h4" color="textSecondary" className={ classes.title }>Hello, I'm <span className="tracking-in-expand">Frontend Developer</span></Typography>
                 <Typography color="textPrimary">
