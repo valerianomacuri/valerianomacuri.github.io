@@ -1,20 +1,25 @@
-import React from 'react'
+import { makeStyles, Tooltip, Typography } from '@material-ui/core'
+
+const useStyles = makeStyles( theme => ({
+    img: {
+        display: 'inline-block',
+        width: 120,
+        [theme.breakpoints.down('xs')]: {
+            width: 80
+        }
+    }
+}))
 
 export const IconTool = ({
     tool,
     rotate="",
+    titleTooltip=""
 }) => {
 
-
+    const classes = useStyles()
     return (
-            <div className="abilities__container-icon tooltip">
-                <img className={`abilities__icon animation-zoom ${rotate}`} src={`./assets/svg/${tool}.svg`}/>
-                <div class="top">
-                    <h3 style={{
-                        textAlign: 'center',
-                    }}>{ tool }</h3>
-                    <i></i>
-                </div>
-            </div>
+            <Tooltip title={ <Typography variant='h6'>{ tool }</Typography> } placement='top'>
+                <img className={ classes.img } src={`./assets/svg/${ tool }.svg`}/>
+            </Tooltip>
     )
-}
+} 

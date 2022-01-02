@@ -1,5 +1,12 @@
+import { Grid, makeStyles } from '@material-ui/core'
 import React from 'react'
 import { IconTool } from './IconTool'
+
+const useStyles = makeStyles( theme => ({
+    gridItem: {
+        display: 'flex'
+    }
+}))
 
 export const IconToolList = () => {
 
@@ -16,18 +23,18 @@ export const IconToolList = () => {
         "sass",
         "npm",
     ]
+
+    const classes = useStyles()
     
     return (
-        <div className="abilities__grid">
+        <Grid container spacing={ 4 }>
             {
                 tools.map( item => {
-                    if(item === "react") {
-                        return <IconTool key={item} tool={item} rotate="animation-rotate" />
-                    } else {
-                        return <IconTool key={item} tool={item} />
-                    }
+                return  <Grid item xl={ 4 } xs={ 6 } className={ classes.gridItem } justifyContent='center' alignItems='center'>
+                            <IconTool key={item} tool={item} />
+                        </Grid>
                 }) 
-            }  
-        </div>
+            } 
+        </Grid>
     )
 }
